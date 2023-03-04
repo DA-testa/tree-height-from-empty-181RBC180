@@ -1,18 +1,23 @@
 # python3
 import sys
 import threading
-import numpy as np
 
-def find_depth(node, tree):
-    if node == -1:
-        return 0
-    else:
-        return 1 + find_depth(tree[node], tree)
+def compute_height(n, parents):
+    tree = [[] for i in range(n)]
+    for i in range(n):
+        if parents[i] == -1:
+            root = i
+        else:
+            tree[parents[i]].append(i)
 
-def main():
-    input()
-    tree = np.array(input().split(), dtype=int)
-    depth = find_depth(0, tree)
-    print(depth)
+    def height(node):
+        if not tree[node]:
+            return 1
+        else:
+            return 1 + max(height(child) for child in tree[node])
 
-main()
+    return height(root)
+
+n = int(input())
+parents = list(map(int, input().split()))
+print(compute_height(n, parents))
