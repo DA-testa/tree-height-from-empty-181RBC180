@@ -12,7 +12,7 @@ def find_depth(node, tree):
 def main():
     input()
     tree = np.array(input().split(), dtype=int)
-    index = int(np.where(tree == -1)[0])
+    index = int(np.where(tree == -1)[0][0])
     # print(index)
     depth = find_depth(0, tree)
     print(depth)
