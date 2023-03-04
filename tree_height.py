@@ -1,7 +1,3 @@
-# python3
-import sys
-import threading
-
 def compute_height(n, parents):
     tree = [[] for i in range(n)]
     for i in range(n):
@@ -18,6 +14,6 @@ def compute_height(n, parents):
 
     return height(root)
 
-n = int(input())
+n = input()
 parents = list(map(int, input().split()))
-print(compute_height(n, parents))
+print(compute_height(int(n), parents))
