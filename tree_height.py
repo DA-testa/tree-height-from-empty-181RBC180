@@ -14,6 +14,6 @@ def compute_height(n, parents):
 
     return height(root)
 
-n = input()
+n = input().strip()
 parents = list(map(int, input().split()))
 print(compute_height(int(n), parents))
