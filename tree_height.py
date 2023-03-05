@@ -14,11 +14,10 @@ def compute_height(n, parents):
 
     return height(root)
 
-# if input().upper == "I":
-input()
-print(compute_height(int(n), parents))
-parents = list(map(int, input().split()))
+#  if input().upper == "I":
 n = input().strip()
+parents = list(map(int, input().split()))
+print(compute_height(int(n), parents))
 # elif input().upper == "F" :
 # f=open(input("filename"))
 # n=f.read()
